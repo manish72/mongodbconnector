@@ -7,7 +7,7 @@ def get_requirement(file_path:str)->List[str]:
     requirements = []
     with open(file_path) as f:
         requirements=f.readlines()
-        requirements=[req.replace("\n","")for req in requirements]
+        requirements=[req.replace("\n","") for req in requirements if not req.startswith("#")]
         
         if HYPEN_E_DOT in requirements:
             requirements.remove(HYPEN_E_DOT)
@@ -38,6 +38,6 @@ setup(
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
+    #install_requires=get_requirement("./requirements_dev.txt")
     install_requires=get_requirement("./requirements_dev.txt")
-    
 )
