@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-package_name = "databaseautomation1"
+package_name = "automongodatabase"
 
 list_of_files = [
    ".github/workflows/ci.yaml",
